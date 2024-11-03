@@ -35,3 +35,23 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/arushi-vaidya/rv-fact-checker.git
 cd rv-fact-checker
+
+Install Dependencies
+You can install the dependencies from the requirements.txt file:
+
+bash
+Copy code
+pip install -r requirements.txt
+Train and Save the Model
+Place the True.csv and Fake.csv datasets in the root directory.
+Run the train_model.py script to train and save the model as model.pkl:
+bash
+Copy code
+python train_model.py
+Run the Application
+Start the Flask server by running:
+
+bash
+Copy code
+python app.py
+The app will be available at http://127.0.0.1:5000.
