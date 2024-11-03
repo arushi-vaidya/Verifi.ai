@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RV Fact Checker</title>
+    <title>RV Fact Checker Chatbot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-</head>
 <body>
-    <h1>RV Fact Checker</h1>
-    <div class="container">
-        <h2>News Checker</h2>
-        <form action="/predict" method="post">
-            <textarea name="news_article" rows="10" cols="50" placeholder="Enter a news article..."></textarea><br>
-            <input type="submit" value="Classify News">
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>RV Fact Checker</h1>
+        </div>
+        <div class="chat-window">
+            {% if prediction %}
+                <div class="message bot-message">
+                    <p>{{ prediction }}</p>
+                </div>
+            {% endif %}
+        </div>
+        <form action="/predict" method="post" class="chat-input">
+            <textarea name="news_article" rows="3" placeholder="Type your news article..."></textarea>
+            <input type="submit" value="Send">
         </form>
-        {% if prediction %}
-            <h2>Prediction: {{ prediction }}</h2>
-        {% endif %}
     </div>
     <footer>
         <p>&copy; 2024 RV Fact Checker. All rights reserved.</p>
