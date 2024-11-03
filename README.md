@@ -36,7 +36,7 @@ To run this project locally, follow these steps:
 git clone https://github.com/arushi-vaidya/rv-fact-checker.git
 cd rv-fact-checker
 
-Install Dependencies
+### Install Dependencies
 You can install the dependencies from the requirements.txt file:
 
 bash
