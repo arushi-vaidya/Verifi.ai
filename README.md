@@ -8,7 +8,6 @@ RV Fact Checker is a web-based application that uses a machine learning model to
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Model Training](#model-training)
-- [License](#license)
 
 ---
 
