@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing Prediction Result</h1>
+
+        <!-- Display URL -->
+        <p><strong>URL:</strong> {{ url }}</p>
+
+        <!-- Phishing Prediction Result -->
+        <h3>Prediction:</h3>
+        <p class="{{ 'bad' if result == 'Phishing' else 'good' }}">
+            {{ result }}
+        </p>
+
+        <!-- WHOIS Data Section -->
+        <div class="result-container">
+            <h3>WHOIS Data Analysis</h3>
+            {% if whois_data.error %}
+                <p>Error retrieving WHOIS data: {{ whois_data.error }}</p>
+            {% else %}
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Domain Name:</strong> {{ whois_data['domain_name'] or 'N/A' }}</li>
+                    <li class="list-group-item"><strong>Creation Date:</strong> {{ whois_data['creation_date'] or 'N/A' }}</li>
+                    <li class="list-group-item"><strong>Expiration Date:</strong> {{ whois_data['expiration_date'] or 'N/A' }}</li>
+                    <li class="list-group-item"><strong>WHOIS Privacy:</strong> {{ whois_data.get('privacy', 'N/A') }}</li>
+                </ul>
+
+                <!-- Domain Age Analysis -->
+                <h4>Domain Age Status:</h4>
+                <p class="{{ 'bad' if whois_analysis['domain_age_status'] == 'Suspicious' else 'good' }}">
+                    Domain Age: {{ whois_analysis['domain_age'] }} days - {{ whois_analysis['domain_age_status'] }}
+                </p>
+
+                <!-- Expiration Status -->
+                <h4>Expiration Status:</h4>
+                <p class="{{ 'bad' if whois_analysis['expiration_status'] == 'Suspicious' else 'good' }}">
+                    Expiration Date: {{ whois_analysis['expiration_date'] }} - {{ whois_analysis['expiration_status'] }}
+                </p>
+
+                <!-- WHOIS Privacy -->
+                <h4>WHOIS Privacy:</h4>
+                <p>{{ whois_analysis['whois_privacy'] }}</p>
+            {% endif %}
+        </div>
+
+        <!-- Google Search Results Section -->
+        <div class="google-results">
+            <h3>Google Search Results</h3>
+            {% if google_results %}
+                <ul>
+                    {% for result in google_results %}
+                        <li>{{ result }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Error fetching Google results: {{ google_analysis['error'] }}</p>
+            {% endif %}
+
+            <!-- Google Phishing Warning -->
+            {% if google_analysis.google_phishing_warning %}
+                <p class="phishing-warning">Warning: Potential Phishing or Malware related to this URL!</p>
+            {% else %}
+                <p class="phishing-info">No Phishing warnings found in Google search results.</p>
+            {% endif %}
+        </div>
+
+        <!-- Go Back Button -->
+        <a href="/" class="btn-primary">Go Back</a>
+    </div>
+</body>
+</html>
