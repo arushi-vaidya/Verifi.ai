@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Verifi.ai</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/Verifi.png') }}" alt="Logo" class="logo-img">
+            <h1 class="logo-text">Verifi.ai</h1> 
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/news_checker">News Checker</a>
+            <a href="/phishing_detector">Phishing Detector</a>
+            <a href="/about_us">About Us</a> 
+        </nav>
+    </header>
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>We are a group of passionate students working on building a platform to protect you from fake news and phishing attacks. Our team consists of:</p>
+        <div class="team-members">
+            <div class="team-member">
+                <h3>Arushi Vaidya</h3>
+                <p class="student-role">Computer Science Engineering Student</p>
+                <div class="student-description">
+                    <p>Arushi is a passionate computer science student, dedicated to building innovative solutions using machine learning and artificial intelligence. She is the lead developer of Verifi.ai, focused on enhancing the platform's security features.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Aryan Gupta</h3>
+                <pclass="student-role">Computer Science Engineering Student</p>
+                <div class="student-description">
+                    <p>Aryan specializes in backend development and AI algorithms. His expertise in software architecture plays a crucial role in ensuring the robustness and scalability of Verifi.ai.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Dhruv Dhankar</h3>
+                <p class="student-role">Computer Science (Data Science) Engineering Student</p>
+                <div class="student-description">
+                    <p>Dhruv is passionate about system design and software development. He works on the deployment and integration of Verifi.ai's features, ensuring the platform operates smoothly.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Yashpreet Goyal</h3>
+                <p class="student-role">AIML Engineering Student</p>
+                <div class="student-description">
+                    <p>Yashpreet focuses on machine learning models for detecting fake news and phishing attempts. His research aims to enhance the platform's AI capabilities, making it more effective in real-world scenarios.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <h3>Anuj Devpura</h3>
+                <p class="student-role">AIML Engineering Student</p>
+                <div class="student-description">
+                    <p>Anuj brings a deep understanding of AI and machine learning algorithms. He works on developing predictive models and implementing the intelligence behind Verifi.ai's phishing detection system.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Experiential Learning Project
+    </footer>
+</body>
+</html>
