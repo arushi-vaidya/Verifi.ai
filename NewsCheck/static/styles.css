@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 50%;
+    max-width: 50%;
+    background-color: #333;
+}
+
+.chat-header {
+    background-color: #111;
+    color: white;
+    padding: 15px;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.chat-window {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-top: 2px solid #444;
+    border-bottom: 2px solid #444;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 45%;
+}
+
+.user-message {
+    background-color: #888;
+    align-self: flex-end;
+    color: black;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #444;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.chat-input {
+    padding: 10px;
+    background-color: #111;
+    flex-shrink: 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    resize: none;
+}
+
+input[type="submit"], button {
+    width: 30%;
+    padding: 10px;
+    margin-left: 35%;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #666;
+}
+
+footer {
+    background: #1c1c1c;
+    color: #e0e0e0;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #6699CC;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+header {
+    background: #000;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #6699CC;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffffff;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid #6699CC;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+nav a:hover {
+    background-color: #6699CC;
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(102, 153, 204, 0.6);
+}
