@@ -1,3 +1,5 @@
+## VERIFI.AI
+
 This repository contains two separate Flask-based web applications:
 
 1. **NewsCheck** - A news fact-checking app that classifies news articles as true or fake using a machine learning model.
