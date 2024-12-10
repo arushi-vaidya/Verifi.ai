@@ -1,44 +1,22 @@
-from flask import Flask, render_template, request, session, redirect, url_for
-import pickle
-from datetime import timedelta
+from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a secure key
-app.permanent_session_lifetime = timedelta(minutes=30)
 
-# Load the news classification model
-with open('model.pkl', 'rb') as file:
-    news_model = pickle.load(file)
-
-# Route for the home page (RV Fact Checker)
 @app.route('/')
-def index():
-    # Initialize session history if it doesn't exist
-    if 'conversation' not in session:
-        session['conversation'] = []
-    return render_template('index.html', conversation=session['conversation'])
+def home():
+    return render_template('home.html')
 
-# Route for news classification
-@app.route('/predict', methods=['POST'])
-def predict():
-    news_article = request.form['news_article']
-    prediction = news_model.predict([news_article])
-    result = "True" if prediction[0] == 0 else "Fake"
+@app.route('/news_checker')
+def news_checker():
+    return redirect('http://127.0.0.1:5001')  
 
-    # Store user input and prediction in session
-    session['conversation'].append({
-        'user_input': news_article,
-        'prediction': result
-    })
-    session.modified = True  # Indicate session has changed
+@app.route('/phishing_detector')
+def phishing_detector():
+    return redirect('http://127.0.0.1:5002') 
 
-    return redirect(url_for('index'))
-
-# Route to clear conversation history
-@app.route('/clear')
-def clear_conversation():
-    session.pop('conversation', None)
-    return redirect(url_for('index'))
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html') 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5000)  
