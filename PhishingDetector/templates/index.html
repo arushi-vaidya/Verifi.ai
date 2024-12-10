@@ -7,13 +7,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Phishing Detection</h1>
-        <form action="/predict" method="post" class="form">
-            <label for="url">Enter URL:</label>
-            <input type="text" id="url" name="url" required placeholder="Enter a URL to check...">
-            <button type="submit">Check</button>
-        </form>
+    <header class="chat-header">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/Verifi.png') }}" alt="Logo" class="logo-img">
+            <h1 class="logo-text">Verifi.ai - Phishing Detector</h1>
+        </div>
+        <nav>
+            <a href="{{ url_for('home_page') }}">Home</a>
+            <a href="{{ url_for('news_checker') }}">News Checker</a>
+            <a href="{{ url_for('home') }}">Phishing Detector</a>
+        </nav>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-window">
+            <form action="{{ url_for('predict') }}" method="post" class="chat-form">
+                <div class="message bot-message">
+                    <strong>Verifi.ai:</strong> Please enter the URL you'd like to check for phishing.
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="url" name="url" placeholder="Enter a URL to check..." required>
+                    <button type="submit">Check</button>
+                </div>
+            </form>
+        </div>
     </div>
+
+    <footer>
+        <p>Experiential Learning Project</p>
+    </footer>
 </body>
 </html>
