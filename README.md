@@ -1,4 +1,4 @@
-## VERIFI.AI
+# VERIFI.AI
 
 This repository contains two separate Flask-based web applications:
 
