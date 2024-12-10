@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifi.ai</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/Verifi.png') }}" alt="Logo" class="logo-img">
+
+            <h1 class="logo-text">Verifi.ai</h1> 
+        </div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/news_checker">News Checker</a>
+            <a href="/phishing_detector">Phishing Detector</a>
+            <a href="/about_us">About Us</a> 
+        </nav>
+    </header>
+    <section class="home-background">
+        <div class="content">
+            <h2>Welcome to Verifi.ai!</h2>
+            <p>We protect you from Fake news and Phishing</p>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>Fake News Detection</h3>
+                    <p>We use machine learning models to verify the authenticity of news articles.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Phishing Protection</h3>
+                    <p>Our tools include WHOIS lookups and Google search analysis to detect phishing websites.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>WHOIS Lookup</h3>
+                    <p>Check domain registration details to identify suspicious websites.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Google Search Analysis</h3>
+                    <p>Analyze search results to determine if a website is potentially harmful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Experiential Learning Project
+    </footer>
+</body>
+</html>
