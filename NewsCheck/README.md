@@ -1,6 +1,6 @@
-# RV Fact Checker
+# News Checker
 
-RV Fact Checker is a web-based application that uses a machine learning model to classify news articles as either **true** or **fake**. The project leverages a Naive Bayes classifier with TF-IDF vectorization to analyze the text and predict the article's authenticity. The web app is designed with a chatbot-style interface that maintains conversation history, allowing users to classify multiple articles and view previous classifications.
+News Checker is a web-based application that uses a machine learning model to classify news articles as either **true** or **fake**. The project leverages a Naive Bayes classifier with TF-IDF vectorization to analyze the text and predict the article's authenticity. The web app is designed with a chatbot-style interface that maintains conversation history, allowing users to classify multiple articles and view previous classifications.
 
 ## Table of Contents
 - [Features](#features)
