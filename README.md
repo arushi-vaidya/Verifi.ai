@@ -45,19 +45,6 @@ Both applications need to be run simultaneously for full functionality. Make sur
    pip install -r requirements.txt
    ```
 
-3. Train the model:
-   Place the `True.csv` and `Fake.csv` datasets in the root directory.
-   Run the training script to create the `model.pkl` file:
-   ```bash
-   python main.py
-   ```
-
-4. Start the app:
-   ```bash
-   python app.py
-   ```
-   The app will be available at: [http://127.0.0.1:5001](http://127.0.0.1:5001)
-
 ---
 
 ## Phishing Detector Web Application
@@ -75,19 +62,8 @@ This is a Flask-based web application designed to predict whether a given URL is
 - pip (Python package installer)
 
 #### Steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/phishing-detector.git
-   cd phishing-detector
-   ```
 
-2. Install dependencies:
-   ```bash
-   pip install Flask joblib whois requests beautifulsoup4
-   python3 model.py
-   ```
-
-3. Start the app:
+1. Start the app:
    ```bash
    python app.py
    ```
