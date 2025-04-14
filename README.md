@@ -36,7 +36,7 @@ Both applications need to be run simultaneously for full functionality. Make sur
 #### Steps:
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/rv-fact-checker.git](https://github.com/arushi-vaidya/Verifi.ai.git
+   git clone https://github.com/arushi-vaidya/Verifi.ai.git
    cd Verifi.ai
    ```
 
